@@ -1,0 +1,18 @@
+<h1 style="color: chartreuse; text-align: center">Supprimer un étudiant</h1>
+
+<form class="form-horizontal" (submit)="supprimer()">
+    <div class="form-group">
+        <label for="idId" class="col-sm-2 control-label">Id</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="idId" placeholder="Id" name="fId" [(ngModel)]="id">
+        </div>
+    </div>
+    
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Supprimer</button>
+      </div>
+    </div>
+  </form>
+
+<h1 style="color: crimson; text-align: center" *ngIf="flag">La supression a échoué</h1>
