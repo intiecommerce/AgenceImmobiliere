@@ -1,1 +1,83 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><img src="https://i.ibb.co/gzbWfSc/home-3.png" width="30" height="30" alt=""></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/home']">Accueil <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Biens Immobiliers
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" [routerLink]="['/addBiensImmo']">Ajouter</a>
+          <a class="dropdown-item" [routerLink]="['/updateBiensImmo']">Modifier</a>
+          <a class="dropdown-item" [routerLink]="['/listeBiensImmo']">Afficher</a>
+        </div>
+      </li>
 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dossiers
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" [routerLink]="['/addDossier']">Ajouter</a>
+          <a class="dropdown-item" [routerLink]="['/updateDossier']">Modifier</a>
+          <a class="dropdown-item" [routerLink]="['/listeDossier']">Afficher</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Clients
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" [routerLink]="['/addClient']">Ajouter</a>
+          <a class="dropdown-item" [routerLink]="['/updateClient']">Modifier</a>
+          <a class="dropdown-item" [routerLink]="['/listeClient']">Afficher</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Proprietaires
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" [routerLink]="['/addProprietaire']">Ajouter</a>
+          <a class="dropdown-item" [routerLink]="['/updateProprietaire']">Modifier</a>
+          <a class="dropdown-item" [routerLink]="['/listeProprietaire']">Afficher</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Classes Standards
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" [routerLink]="['/addClasseStandard']">Ajouter</a>
+          <a class="dropdown-item" [routerLink]="['/updateClasseStandard']">Modifier</a>
+          <a class="dropdown-item" [routerLink]="['/listeClasseStandard']">Afficher</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Italie
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Biens Immobiliers</a>
+          <a class="dropdown-item" href="#">Clients</a>
+          <a class="dropdown-item" href="#">Proprietaires</a>
+        </div>
+      </li>
+
+      <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Deconnexion</button>
+      </form>
+
+    </ul>
+  </div>
+</nav>
