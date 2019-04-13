@@ -1,3 +1,66 @@
-<p>
-  ajouter-client works!
-</p>
+<h1 style="color: chartreuse; text-align: center">S'inscrire en tant que client</h1>
+
+<form class="form-horizontal" (submit)="ajouter()">
+  <div class="form-group">
+    <label for="idNom" class="col-sm-2 control-label">Nom</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="idNom" placeholder="Nom" name="fNom" [(ngModel)]="cliIn.nom">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idPrenom" class="col-sm-2 control-label">Prénom</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="idPrenom" placeholder="Prenom" name="fPrenom" [(ngModel)]="cliIn.prenom">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idMail" class="col-sm-2 control-label">Mail</label>
+    <div class="col-sm-5">
+      <input type="email" class="form-control" id="idMail" placeholder="Mail" name="fMail" [(ngModel)]="cliIn.mail">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idMdp" class="col-sm-2 control-label">Mot de passe</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="idMdp" placeholder="Mdp" name="fMdp" [(ngModel)]="cliIn.mdp">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idTel" class="col-sm-2 control-label">Téléphone</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="idTel" placeholder="Tel" name="fTel" [(ngModel)]="cliIn.telephone">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idAdresse" class="col-sm-2 control-label">Adresse (nom et numéro de rue)</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="idAdresse" placeholder="Adresse" name="fAdresse" [(ngModel)]="cliIn.adresse.nomAdresse">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idCodePostal" class="col-sm-2 control-label">Code postal</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="idCodePostal" placeholder="CodePostal" name="fCodePostal" [(ngModel)]="cliIn.adresse.codePostal">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idVille" class="col-sm-2 control-label">Ville</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="idVille" placeholder="Ville" name="fVille" [(ngModel)]="cliIn.adresse.ville">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idPays" class="col-sm-2 control-label">Pays</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="idPays" placeholder="Pays" name="fPays" [(ngModel)]="cliIn.adresse.pays">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">S'inscrire</button>
+    </div>
+  </div>
+</form>
+
+<h1 style="color: crimson; text-align: center" *ngIf="flag">L'inscription a échoué</h1>
