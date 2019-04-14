@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ClientService {
 
-  url="http://localhost:8081/AppSystemeAgence/client/"
+  url="http://localhost:8080/AppSystemeAgence/rest/client/"
   constructor(private http:HttpClient) { }
 
   //methode ajouter client
