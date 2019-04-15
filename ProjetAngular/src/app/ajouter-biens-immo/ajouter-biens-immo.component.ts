@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { TouchSequence } from 'selenium-webdriver';
 import { BiensImmo } from '../Model/biens-immo';
+
 
 @Component({
   selector: 'app-ajouter-biens-immo',
@@ -17,6 +19,8 @@ export class AjouterBiensImmoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    
   }
 
   public choixOffre() {

@@ -5,6 +5,9 @@ import { Observable } from 'rxjs';
 import { BiensAVendre } from '../Model/biens-avendre';
 import { Conseiller } from '../Model/conseiller';
 import { Proprietaire } from '../Model/proprietaire';
+import { BiensALouer } from '../Model/biens-alouer';
+import { Visite } from '../Model/visite';
+import { Dossier } from '../Model/dossier';
 
 @Injectable({
   providedIn: 'root'
@@ -82,18 +85,114 @@ public chercherBienImmobilierParClasseStandard(id:number){
 }
 
 // *******************************************Biens A Louer
+//afficher les biens a louer
+public afficherTousBaL(){
+  return this.http.get(`${this.url}listeBaL`)
+}
 
-public afficherTousBaL
+//ajouter un bien a louer
+public ajouterBaL(balIn:BiensALouer):Observable<BiensALouer>{
+  return this.http.post<BiensALouer>(`${this.url}ajoutBaL`,balIn)
+}
 
+//modifier bien a louer
+public modifierBaL(balIn:BiensALouer):Observable<BiensALouer>{
+  return this.http.put<BiensALouer>(`${this.url}modifBaL`,balIn)
+}
 
+//supprimer bien a louer
+public supprimerBaL(id:number){
+  this.http.delete(`${this.url}supprBaL/${id}`)
+}
 
+ //methode rechercher un bien a louer par son id
+ public chercherBaLParId(id:number){
+  return this.http.get(`${this.url}recBaL?pId=${id}`);
+}
 
+// *******************************************Biens A Vendre
+//afficher les biens a louer
+public afficherTousBaV(){
+  return this.http.get(`${this.url}listeBaV`)
+}
 
+//ajouter un bien a louer
+public ajouterBaV(bavIn:BiensAVendre):Observable<BiensAVendre>{
+  return this.http.post<BiensAVendre>(`${this.url}ajoutBaV`,bavIn)
+}
 
-  //methode ajouter un bien Immobilier
-  public ajouterBienAVendre(bvIn:BiensAVendre):Observable<BiensAVendre>{
-    return this.http.post<BiensAVendre>(`${this.url}ajoutBaV`,bvIn);
+//modifier bien a louer
+public modifierBaV(bavIn:BiensAVendre):Observable<BiensAVendre>{
+  return this.http.put<BiensAVendre>(`${this.url}modifBaV`,bavIn)
+}
+
+//supprimer bien a louer
+public supprimerBaV(id:number){
+  this.http.delete(`${this.url}supprBaV/${id}`)
+}
+
+ //methode rechercher un bien a louer par son id
+ public chercherBaVParId(id:number){
+  return this.http.get(`${this.url}recBaV?pId=${id}`);
+}
+
+// *******************************************Visite
+//afficher les biens a louer
+public afficherTousVisite(){
+  return this.http.get(`${this.url}listeVis`)
+}
+
+//ajouter un bien a louer
+public ajouterVisite(vIn:Visite):Observable<Visite>{
+  return this.http.post<Visite>(`${this.url}ajoutVis`,vIn)
+}
+
+//modifier bien a louer
+public modifierVisite(vIn:Visite):Observable<Visite>{
+  return this.http.put<Visite>(`${this.url}modifVis`,vIn)
+}
+
+//supprimer bien a louer
+public supprimerVisite(id:number){
+  this.http.delete(`${this.url}supprVis/${id}`)
+}
+
+ //methode rechercher un bien a louer par son id
+ public chercherVisiteParId(id:number){
+  return this.http.get(`${this.url}recVis?pId=${id}`);
+}
+
+// *******************************************Dossier
+//afficher les biens a louer
+public afficherTousDossier(){
+  return this.http.get(`${this.url}listeDos`)
+}
+
+//ajouter un bien a louer
+public ajouterDossier(dIn:Dossier):Observable<Dossier>{
+  return this.http.post<Dossier>(`${this.url}ajoutDos`,dIn)
+}
+
+//modifier bien a louer
+public modifierDossier(dIn:Dossier):Observable<Dossier>{
+  return this.http.put<Dossier>(`${this.url}modifDos`,dIn)
+}
+
+//supprimer bien a louer
+public supprimerDossier(id:number){
+  this.http.delete(`${this.url}supprDos/${id}`)
+}
+
+ //methode rechercher un bien a louer par son id
+ public chercherDossierParId(id:number){
+  return this.http.get(`${this.url}recDos?pId=${id}`);
+}
+
+// *******************************************classe standard
+  //rechercher une classe standard par son id
+  public chercherClasseStandardParClient(id:number){
+    return this.http.get(`${this.url}recCstdByCli?pId=${id}`)
   }
-  
-  //methode 
+
+
 }

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Proprietaire } from '../Model/proprietaire';
+import { Adresse } from '../Model/adresse';
+import { ProprietaireService } from '../Service/proprietaire.service';
+import { Router } from '@angular/router';
+import { ConseillerService } from '../Service/conseiller.service';
 
 @Component({
   selector: 'app-ajouter-proprietaire',
@@ -7,9 +12,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AjouterProprietaireComponent implements OnInit {
 
-  constructor() { }
+  propIn: Proprietaire = new Proprietaire();
+  flag: boolean = false;
+  AdresseIn: Adresse = new Adresse();
+
+  constructor(private conService: ConseillerService, private router: Router) { }
 
   ngOnInit() {
   }
+
+  public ajouter() {
+    this.propIn.adresse = this.AdresseIn;
+    this.propIn.role = "proprietaire";
+    this.propIn.active = true;
+
+    this.conService.ajouterProprietaire(this.propIn).subscribe(
+      (res) => {
+        let proTemp: Proprietaire = res;
+        if (proTemp.id != 0) {
+          this.router.navigate(['']);
+          this.flag = false;
+        } else {
+          this.flag = true;
+        }
+      })
+  }
+
+
 
 }
