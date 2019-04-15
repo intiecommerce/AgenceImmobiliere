@@ -1,12 +1,15 @@
 <h1 style="color: chartreuse; text-align: center">Ajouter un bien immobilier</h1>
 
 <form class="form-horizontal" (submit)="choixOffre()">
-  <div class="form-group">
-    <label for="idOffre" class="col-sm-2 control-label">Offre</label>
+  <div class="form-group row col-sm-10">
+    <label for="idOffre" class="control-label">Offre</label>
     <div class="col-sm-5">
-      <select  class="form-control" id="idOffre" [(ngModel)]="model.offre">
-        <option *ngFor="let offre of offres" [value]="offre"  >{{offre}}</option>
+      <select  class=" form-control" id="idOffre" [(ngModel)]="model.offre" [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let offreOption of offres" [value]="offreOption"  >{{offreOption}}</option>
       </select>
+    </div>
+    <div class="col-sm-2">
+      <button type="submit" class="btn btn-success">ok</button>
     </div>
   </div>
 </form>

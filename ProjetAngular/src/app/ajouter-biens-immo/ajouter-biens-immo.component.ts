@@ -9,7 +9,7 @@ import { BiensImmo } from '../Model/biens-immo';
 })
 export class AjouterBiensImmoComponent implements OnInit {
 
-  offres = ['Type offre','A Vendre', 'A Louer'];
+  offres = ['A Vendre', 'A Louer'];
   model = new BiensImmo();
   bienAVendre: boolean = false;
   bienALouer: boolean = false;
