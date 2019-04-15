@@ -24,7 +24,7 @@
     <td>{{c.adresse.pays}}</td>
     <td><button class="btn btn-danger" (click)="deleteLien(c.id)">Supprimer</button>
      | 
-    <a class="btn btn-primary"  [routerLink]="[ '/modif', {pId:c.id} ]">Modifier</a></td>
+    <a class="btn btn-primary"  [routerLink]="[ '/modifCli', {id:c.id} ]">Modifier</a></td>
     
   </tr>
 </table>

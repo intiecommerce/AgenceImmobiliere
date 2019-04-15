@@ -47,6 +47,15 @@ export class ModifierClientComponent implements OnInit {
 
   }
 
+  public update(){
+    // récupérer l'id optionnel de la requête
+    let cliUp:Client = this.formModif.value;
+    
+    this.cliService.chercherClientParId(cliUp.id).subscribe((result)=>{
+                                                              this.formModif.setValue(result);
+                                                            });
+  }
+
   public modifier(){
     
     let cliIn:Client = this.formModif.value;

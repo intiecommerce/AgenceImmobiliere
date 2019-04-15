@@ -4,7 +4,7 @@
 
 
 
-<form class="form-horizontal" (submit)="ajouter ()">
+<form class="form-horizontal" (submit)="ajouter()">
   <div class="form-group">
     <label for="idDateVisite" class="col-sm-2 control-label">DateVisite</label>
     <div class="col-sm-5">
@@ -18,27 +18,27 @@
     </div>
   </div>
   <div class="form-group">
-    <label for="idClient" class="col-sm-2 control-label">Client</label>
+    <label for="idClient" class="col-sm-2 control-label"> ID Client</label>
     <div class="col-sm-5">
-      <input type="number" class="form-control" id="idClient" placeholder="Client" name="fClient" [(ngModel)]="visIn.client">
+      <input type="number" class="form-control" id="idClient" placeholder="Client" name="fClient" [(ngModel)]="clientIn.id">
     </div>
   </div>
   <div class="form-group">
-    <label for="idConseiller" class="col-sm-2 control-label">Conseiller</label>
+    <label for="idConseiller" class="col-sm-2 control-label">ID Conseiller</label>
     <div class="col-sm-5">
-      <input type="number" class="form-control" id="idConseiller" placeholder="Conseiller" name="fConseiller" [(ngModel)]="visIn.conseillerVisite">
+      <input type="number" class="form-control" id="idConseiller" placeholder="Conseiller" name="fConseiller" [(ngModel)]="conseillerIn.id">
     </div>
   </div>
   <div class="form-group">
-    <label for="idBienImmo" class="col-sm-2 control-label">Bien Immobilier</label>
+    <label for="idBienImmo" class="col-sm-2 control-label">ID Bien Immobilier</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" id="idBienImmo" placeholder="BienImmo" name="fBienImmo" [(ngModel)]="visIn.bienImmo">
+      <input type="number" class="form-control" id="idBienImmo" placeholder="ID Bien Immobilier" name="fBienImmo" [(ngModel)]="BienImmoIn.id">
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">S'inscrire</button>
+      <button type="submit" class="btn btn-default">Ajouter</button>
     </div>
   </div>
 </form>
