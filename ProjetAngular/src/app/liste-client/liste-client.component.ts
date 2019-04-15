@@ -15,8 +15,9 @@ export class ListeClientComponent implements OnInit {
   constructor(private conService: ConseillerService) { }
 
   ngOnInit() {
-    this.conService.afficherTousClient().subscribe((data) => { this.liste = data },
-      (erreur) => { console.log(erreur) }
+    this.conService.afficherTousClient().subscribe(
+      (data) => { this.liste = data },
+      (erreur) => { console.log(erreur)}
     )
 
   }
