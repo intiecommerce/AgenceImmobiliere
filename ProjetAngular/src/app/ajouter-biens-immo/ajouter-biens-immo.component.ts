@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TouchSequence } from 'selenium-webdriver';
+import { BiensImmo } from '../Model/biens-immo';
 
 @Component({
   selector: 'app-ajouter-biens-immo',
@@ -7,11 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AjouterBiensImmoComponent implements OnInit {
 
-  offres = ['A Vendre', 'A Louer'];
+  offres = ['Type offre','A Vendre', 'A Louer'];
+  model = new BiensImmo();
+  bienAVendre: boolean = false;
+  bienALouer: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public choixOffre() {
+    if (this.model.offre == 'A Vendre') {
+      this.bienAVendre=true;
+      this.bienALouer=false;
+    } else if(this.model.offre=='A Louer') {
+      this.bienAVendre=false;
+      this.bienALouer=true;
+    } else {
+      this.bienAVendre=false;
+      this.bienALouer=false;
+    }
   }
 
 }

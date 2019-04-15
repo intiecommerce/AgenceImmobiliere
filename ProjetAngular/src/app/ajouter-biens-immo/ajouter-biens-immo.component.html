@@ -4,16 +4,13 @@
   <div class="form-group">
     <label for="idOffre" class="col-sm-2 control-label">Offre</label>
     <div class="col-sm-5">
-      <select  class="form-control" id="idOffre" required>
-        <option *ngFor="let offre of offres" [value]="offre">{{offre}}</option>
+      <select  class="form-control" id="idOffre" [(ngModel)]="model.offre">
+        <option *ngFor="let offre of offres" [value]="offre"  >{{offre}}</option>
       </select>
     </div>
   </div>
-  <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">ok</button>
-      </div>
-  </div>
 </form>
 
+<h3 *ngIf="bienAVendre">C'est le form A vendre</h3>
+<h3 *ngIf="bienALouer">C'est le form A louer</h3>
 <h1 style="color: crimson; text-align: center" *ngIf="flag">L'ajout du bien immobilier a échoué</h1>
