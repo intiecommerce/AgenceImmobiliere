@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ConseillerService } from '../Service/conseiller.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ajouter-biens-immo',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AjouterBiensImmoComponent implements OnInit {
 
-  constructor(private conService:Con) { }
+  constructor(private conService:ConseillerService, private router:Router) { }
 
   ngOnInit() {
+
+    
   }
 
 }
