@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AjouterBiensImmoComponent implements OnInit {
 
-  constructor(private conService:Con) { }
+  offres = ['A Vendre', 'A Louer'];
+
+  constructor() { }
 
   ngOnInit() {
   }

@@ -16,15 +16,15 @@ export class BiensImmo {
     public type:string;
     public dateMiseEnVente:Date;
     public dateDisponibilite:Date;
-    public revenueCadastral:number;
-    public nbrChambre:number;
+    public revenueCadastral?:number;
+    public nbrChambre?:number;
     public photo:string;
     public adresse:Adresse;
     public proprietaire:Personne;
     public conseillerResponsable:Personne;
-    public classeStandard:ClasseStandard;
-    public visites:Array<Visite>;
-    public dossiers:Array<Dossier>;
+    public classeStandard?:ClasseStandard;
+    public visites?:Array<Visite>;
+    public dossiers?:Array<Dossier>;
 
     constructor(){}
 }
