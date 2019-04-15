@@ -19,9 +19,52 @@
     </div>
   </div>
   <div class="form-group">
+    <label for="idMail" class="col-sm-2 control-label">Mail</label>
+    <div class="col-sm-5">
+      <input type="email" class="form-control" id="idMail" placeholder="Mail" formControlName="mail">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idMdp" class="col-sm-2 control-label">Mot de passe</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="idMdp" placeholder="mot de passe"  formControlName="mdp">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idTel" class="col-sm-2 control-label">Telephone</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="idTel" placeholder="Tel" formControlName="telephone">
+    </div>
+  </div>
+  <div class="form-group" formGroupName="adresse">
+    <label for="idNomAdresse" class="col-sm-2 control-label">nomAdresse</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="idNomAdresse" placeholder="Adresse(N° rue, nom rue)"  formControlName="nomAdresse">
+    </div>
+  </div>
+  <div class="form-group" formGroupName="adresse">
+    <label for="idCodePostal" class="col-sm-2 control-label">Code Postal</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="idCodePostal" placeholder="Code Postal" formControlName="codePostal">
+    </div>
+  </div>
+  <div class="form-group" formGroupName="adresse">
+    <label for="idVille" class="col-sm-2 control-label">Ville</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="idVille" placeholder="Ville"  formControlName="ville">
+    </div>
+  </div>
+  <div class="form-group" formGroupName="adresse">
+    <label for="idPays" class="col-sm-2 control-label">Pays</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="idPays" placeholder="Pays"  formControlName="pays">
+    </div>
+  </div>
+  
+  <div class="form-group">
     <div class="col-sm-offset-2 col-sm-5">
       <button type="submit" class="btn btn-success">Modifier</button>
     </div>
   </div>
 </form>
-<h1 style="color:red; text-align: center" *ngIf="flag">La modif a échouée</h1>
+<h1 style="color:red; text-align: center" *ngIf="flag">La modification a échouée</h1>
