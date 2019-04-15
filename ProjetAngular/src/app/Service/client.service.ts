@@ -22,6 +22,11 @@ export class ClientService {
     return this.http.put<Client>(`${this.url}modifCli`,clIn);
   }
 
+  //methode rechercher client
+public chercherClientParId(id:number){
+  return this.http.get(`${this.url}recCli?pId=${id}`);
+}
+
 // *******************************************biens immo
 //rechercher bien immo par classe standard
 public chercherBienImmobilierParClasseStandard(id:number){
