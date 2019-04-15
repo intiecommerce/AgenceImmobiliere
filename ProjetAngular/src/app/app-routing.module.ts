@@ -16,6 +16,9 @@ import { ListeProprietaireComponent } from './liste-proprietaire/liste-proprieta
 import { ListeDossierComponent } from './liste-dossier/liste-dossier.component';
 import { ListeBiensImmoComponent } from './liste-biens-immo/liste-biens-immo.component';
 import { ListeClasseStandardComponent } from './liste-classe-standard/liste-classe-standard.component';
+import { AjouterVisiteComponent } from './ajouter-visite/ajouter-visite.component';
+import { ModifierVisiteComponent } from './modifier-visite/modifier-visite.component';
+import { SupprimerVisiteComponent } from './supprimer-visite/supprimer-visite.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -35,6 +38,9 @@ const routes: Routes = [
   {path:'listeDossier',component:ListeDossierComponent},
   {path:'listeBiensImmo',component:ListeBiensImmoComponent},
   {path:'listeClasseStandard',component:ListeClasseStandardComponent},
+  {path:'addVisite',component:AjouterVisiteComponent},
+  {path:'updateVisite',component:ModifierVisiteComponent},
+  {path:'listeVisite',component:SupprimerVisiteComponent},
 
   {path:'**',redirectTo:'home',pathMatch:'full'}
 ];
