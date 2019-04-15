@@ -25,6 +25,11 @@ import { ListeProprietaireComponent } from './liste-proprietaire/liste-proprieta
 import { ListeDossierComponent } from './liste-dossier/liste-dossier.component';
 import { ListeBiensImmoComponent } from './liste-biens-immo/liste-biens-immo.component';
 import { ListeClasseStandardComponent } from './liste-classe-standard/liste-classe-standard.component';
+import { AjouterVisiteComponent } from './ajouter-visite/ajouter-visite.component';
+import { ModifierVisiteComponent } from './modifier-visite/modifier-visite.component';
+import { SupprimerVisiteComponent } from './supprimer-visite/supprimer-visite.component';
+import { RechercherVisiteComponent } from './rechercher-visite/rechercher-visite.component';
+import { ListeVisiteComponent } from './liste-visite/liste-visite.component';
 
 
 @NgModule({
@@ -47,7 +52,12 @@ import { ListeClasseStandardComponent } from './liste-classe-standard/liste-clas
     ListeProprietaireComponent,
     ListeDossierComponent,
     ListeBiensImmoComponent,
-    ListeClasseStandardComponent
+    ListeClasseStandardComponent,
+    AjouterVisiteComponent,
+    ModifierVisiteComponent,
+    SupprimerVisiteComponent,
+    RechercherVisiteComponent,
+    ListeVisiteComponent
   ],
   imports: [
     BrowserModule,
