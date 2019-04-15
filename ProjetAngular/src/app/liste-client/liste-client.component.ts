@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientService } from '../Service/client.service';
+import { ConseillerService } from '../Service/conseiller.service';
 
 @Component({
   selector: 'app-liste-client',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListeClientComponent implements OnInit {
 
-  constructor() { }
+   //attribut du composant
+   liste: any;
+
+  constructor(private conService: ConseillerService) { }
 
   ngOnInit() {
+    this.conService.afficherTousClient().subscribe((data) => { this.liste = data },
+      (erreur) => { console.log(erreur) }
+    )
+
+  }
+
+  public deleteLien(id: number) {
+    this.conService.supprimerClient(id).subscribe(
+      (result) => {
+        this.liste = this.liste.filter(c => c.id != id)
+      }
+    )
   }
 
 }
