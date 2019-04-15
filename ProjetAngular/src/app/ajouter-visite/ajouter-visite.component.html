@@ -1,3 +1,46 @@
-<p>
-  ajouter-visite works!
-</p>
+<h1 style="color: chartreuse; text-align: center">Ajouter une visite</h1>
+
+
+
+
+
+<form class="form-horizontal" (submit)="ajouter ()">
+  <div class="form-group">
+    <label for="idDateVisite" class="col-sm-2 control-label">DateVisite</label>
+    <div class="col-sm-5">
+      <input type="date" class="form-control" id="idDateVisite" placeholder="DateVisite" name="fDateVisite" [(ngModel)]="visIn.dateVisite">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idHeureVisite" class="col-sm-2 control-label">HeureVisite</label>
+    <div class="col-sm-5">
+      <input type="date" class="form-control" id="idHeureVisite" placeholder="HeureVisite" name="fHeureVisite" [(ngModel)]="visIn.heureVisite">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idClient" class="col-sm-2 control-label">Client</label>
+    <div class="col-sm-5">
+      <input type="number" class="form-control" id="idClient" placeholder="Client" name="fClient" [(ngModel)]="visIn.client">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idConseiller" class="col-sm-2 control-label">Conseiller</label>
+    <div class="col-sm-5">
+      <input type="number" class="form-control" id="idConseiller" placeholder="Conseiller" name="fConseiller" [(ngModel)]="visIn.conseillerVisite">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="idBienImmo" class="col-sm-2 control-label">Bien Immobilier</label>
+    <div class="col-sm-5">
+      <input type="text" class="form-control" id="idBienImmo" placeholder="BienImmo" name="fBienImmo" [(ngModel)]="visIn.bienImmo">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">S'inscrire</button>
+    </div>
+  </div>
+</form>
+
+<h1 style="color: crimson; text-align: center" *ngIf="flag">L'inscription a échoué</h1>

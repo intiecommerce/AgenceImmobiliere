@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Visite } from '../Model/visite';
+import { ConseillerService } from '../Service/conseiller.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ajouter-visite',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AjouterVisiteComponent implements OnInit {
 
-  constructor() { }
+visIn:Visite=new Visite();
+flag:boolean=false;
 
-  ngOnInit() {
+
+  constructor(private conService:ConseillerService,private router:Router) { }
+
+  ngOnInit() {}
+
+  public ajouter(){
+    this.conService.ajouterVisite(this.visIn).subscribe(
+      (res)=>{let visTemp:Visite=res;
+        if(visTemp.id!=0){
+          this.router.navigate(['home']);
+          this.flag=false;
+        }else{
+          this.flag=true
+        }
+      
+      
+      });
   }
-
 }
