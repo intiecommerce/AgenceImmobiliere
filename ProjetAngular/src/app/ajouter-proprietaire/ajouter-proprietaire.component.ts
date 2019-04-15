@@ -14,7 +14,7 @@ export class AjouterProprietaireComponent implements OnInit {
 
   propIn: Proprietaire = new Proprietaire();
   flag: boolean = false;
-  AdresseIn: Adresse = new Adresse();
+  adresseIn: Adresse = new Adresse();
 
   constructor(private conService: ConseillerService, private router: Router) { }
 
@@ -22,7 +22,7 @@ export class AjouterProprietaireComponent implements OnInit {
   }
 
   public ajouter() {
-    this.propIn.adresse = this.AdresseIn;
+    this.propIn.adresse = this.adresseIn;
     this.propIn.role = "proprietaire";
     this.propIn.active = true;
 
