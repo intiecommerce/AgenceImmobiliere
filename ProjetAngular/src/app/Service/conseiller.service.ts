@@ -29,9 +29,30 @@ public ajouterProprietaire(pIn:Proprietaire):Observable<Proprietaire>{
   return this.http.post<Proprietaire>(`${this.url}ajoutPro`,pIn)
 }
 
+//methode modifier Proprietaire
+public modifierProprietaire(pIn:Proprietaire):Observable<Proprietaire>{
+  return this.http.put<Proprietaire>(`${this.url}modifPro`,pIn)
+}
+
+//methode supprimer Proprietaire
+public supprimerProprietaire(id:number){
+  return this.http.delete(`${this.url}supprPro/${id}`)
+}
+
+//methode rechercher un proprietaire
+public chercherProprietaireParId(id:number){
+  return this.http.get(`${this.url}recPro?pId=${id}`)
+}
+
+//methode afficher liste Clients
+public afficherTousClient(){
+  return this.http.get(`${this.url}listeCli`)
+}
+
   //methode ajouter un bien Immobilier
   public ajouterBienAVendre(bvIn:BiensAVendre):Observable<BiensAVendre>{
     return this.http.post<BiensAVendre>(`${this.url}ajoutBaV`,bvIn);
   }
   
+  //methode 
 }
