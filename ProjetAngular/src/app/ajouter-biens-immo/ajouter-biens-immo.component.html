@@ -1,84 +1,19 @@
 <h1 style="color: chartreuse; text-align: center">Ajouter un bien immobilier</h1>
 
-<form class="form-horizontal" (submit)="ajouter()">
-  <div class="form-group">
-    <label for="idTitre" class="col-sm-2 control-label">Titre</label>
+<form class="form-horizontal" (submit)="choixOffre()">
+  <div class="form-group row col-sm-10">
+    <label for="idOffre" class="control-label">Offre</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" id="idTitre" placeholder="Titre" name="fTitre" [(ngModel)]="cliIn.nom">
+      <select  class=" form-control" id="idOffre" [(ngModel)]="model.offre" [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let offreOption of offres" [value]="offreOption"  >{{offreOption}}</option>
+      </select>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="idDescription" class="col-sm-2 control-label">Description</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control" id="idDescription" placeholder="Description" name="fDescription" [(ngModel)]="cliIn.prenom">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="idStatut" class="col-sm-2 control-label">Statut</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control" id="idStatut" placeholder="Statut" name="fStatut" [(ngModel)]="cliIn.mail">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="idSuperficie" class="col-sm-2 control-label">Superficie</label>
-    <div class="col-sm-5">
-      <input type="number" class="form-control" id="idSuperficie" placeholder="Superficie" name="fSuperficie" [(ngModel)]="cliIn.mdp">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="idPrix" class="col-sm-2 control-label">Prix</label>
-    <div class="col-sm-5">
-      <input type="number" class="form-control" id="idPrix" placeholder="Prix" name="fPrix" [(ngModel)]="cliIn.telephone">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="idAdresse" class="col-sm-2 control-label">Adresse (nom et numéro de rue)</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control" id="idAdresse" placeholder="Adresse" name="fAdresse" [(ngModel)]="AdresseIn.nomAdresse">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="idOffre" class="col-sm-2 control-label">Offre</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control" id="idOffre" placeholder="Offre" name="fOffre" [(ngModel)]="AdresseIn.codePostal">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="idType" class="col-sm-2 control-label">Type</label>
-    <div class="col-sm-5">
-      <input type="text" class="form-control" id="idType" placeholder="Type" name="fType" [(ngModel)]="AdresseIn.ville">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="idDateMiseEnVente" class="col-sm-2 control-label">Date de mise en vente</label>
-    <div class="col-sm-5">
-      <input type="date" class="form-control" id="idDateMiseEnVente" placeholder="Date de mise en vente" name="fDateMiseEnVente" [(ngModel)]="AdresseIn.Date de disponibilité">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="idDateDisponibilite" class="col-sm-2 control-label">Date de disponibilité</label>
-    <div class="col-sm-5">
-      <input type="date" class="form-control" id="idDateDisponibilite" placeholder="Date de disponibilité" name="fDateDisponibilite" [(ngModel)]="AdresseIn.Date de disponibilité">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="idRevenueCadastral" class="col-sm-2 control-label">Revenue cadastral</label>
-    <div class="col-sm-5">
-      <input type="number" class="form-control" id="idRevenuCadastral" placeholder="Revenue cadastral" name="fRevenueCdastral" [(ngModel)]="AdresseIn.Date de disponibilité">
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="idNombreChambre" class="col-sm-2 control-label">Nombre de chambre</label>
-    <div class="col-sm-5">
-      <input type="number" class="form-control" id="idNombreChambre" placeholder="Nombre de chambre" name="fNombreChambre" [(ngModel)]="AdresseIn.Date de disponibilité">
-    </div>
-  </div>
-
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Ajouter un bien immobilier</button>
+    <div class="col-sm-2">
+      <button type="submit" class="btn btn-success">ok</button>
     </div>
   </div>
 </form>
 
+<h3 *ngIf="bienAVendre">C'est le form A vendre</h3>
+<h3 *ngIf="bienALouer">C'est le form A louer</h3>
 <h1 style="color: crimson; text-align: center" *ngIf="flag">L'ajout du bien immobilier a échoué</h1>
