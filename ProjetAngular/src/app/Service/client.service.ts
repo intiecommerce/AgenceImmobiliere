@@ -11,6 +11,7 @@ export class ClientService {
   url="http://localhost:8080/AppSystemeAgence/rest/client/"
   constructor(private http:HttpClient) { }
 
+  // *******************************************Client
   //methode ajouter client
   public ajouterClient(clIn:Client):Observable<Client>{
     return this.http.post<Client>(`${this.url}ajoutCli`,clIn);
@@ -22,10 +23,16 @@ export class ClientService {
   }
 
   //methode rechercher client
-  public chercherClientParId(id:number){
-    return this.http.get(`${this.url}recCli?pId=${id}`);
-  }
+public chercherClientParId(id:number){
+  return this.http.get(`${this.url}recCli?pId=${id}`);
+}
 
+// *******************************************biens immo
+//rechercher bien immo par classe standard
+public chercherBienImmobilierParClasseStandard(id:number){
+  return this.http.get(`${this.url}recBienByCstd?pId=${id}`)
+}
+// *******************************************biens a louer
   //methode afficher liste des biens a louer
   public afficherTousBaL(){
     return this.http.get(`${this.url}listeBaL`);
@@ -36,16 +43,28 @@ export class ClientService {
     return this.http.get(`${this.url}recBaL?pId=${id}`);
   }
 
+// *******************************************biens a vendre
   //methode afficher biens a vendre
-  public afficherTousVis(){
-    return this.http.get(`${this.url}listeVis`)
+  public afficherTousBaV(){
+    return this.http.get(`${this.url}listeBaV`)
   }
+
+  //methode rechercher un bien a vendre
+  public chercherBaVParId(id:number){
+    return this.http.get(`${this.url}recBaV?pId=${id}`)
+  }
+// *******************************************visite
+//afficher liste visite
+public afficherTousVis(){
+  return this.http.get(`${this.url}listeVis`)
+}
 
   //methode rechercher une visite par son id
   public chercherVisParId(id:number){
     return this.http.get(`${this.url}recVis?pId=${id}`)
   }
 
+  // *******************************************dossier
   //methode afficher tous les dossiers
   public afficherTousDos(){
     return this.http.get(`${this.url}listeDos`)
@@ -56,6 +75,7 @@ export class ClientService {
     return this.http.get(`${this.url}recDos?pId=${id}`)
   }
 
+  // *******************************************classe standard
   //rechercher une classe standard par son id
   public chercherClasseStandardParClient(id:number){
     return this.http.get(`${this.url}recCstdByCli?pId=${id}`)
