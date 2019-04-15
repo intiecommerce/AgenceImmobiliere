@@ -13,11 +13,13 @@ export class ConseillerService {
   url="http://localhost:8080/AppSystemeAgence/rest/conseiller/"
   constructor(private http:HttpClient) { }
 
-
+// *******************************************Conseiller
 //methode modifier un conseiller
 public modifierConseiller(cIn:Conseiller):Observable<Conseiller>{
   return this.http.put<Conseiller>(`${this.url}modifCon`,cIn);
 }
+
+// *******************************************Proprietaire
 
 //methode liste de proprietaire
 public afficherTousProprietaire(){
@@ -44,10 +46,49 @@ public chercherProprietaireParId(id:number){
   return this.http.get(`${this.url}recPro?pId=${id}`)
 }
 
+// *******************************************Client
 //methode afficher liste Clients
 public afficherTousClient(){
   return this.http.get(`${this.url}listeCli`)
 }
+//methode ajouter client
+public ajouterClient(clIn:Client):Observable<Client>{
+  return this.http.post<Client>(`${this.url}ajoutCli`,clIn);
+}
+
+//methode modifier client
+public modifierClient(clIn:Client):Observable<Client>{
+  return this.http.put<Client>(`${this.url}modifCli`,clIn);
+}
+
+//methode rechercher client
+public chercherClientParId(id:number){
+  return this.http.get(`${this.url}recCli?pId=${id}`);
+}
+
+//methode supprimer client
+public supprimerClient(id:number){
+  return this.http.delete(`${this.url}supprCli/${id}`)
+}
+
+//rechercher client par classe standard
+public chercherClientParClasseStandard(id:number){
+  return this.http.get(`{this.url}recCliByCstd?pId=${id}`)
+}
+
+// *******************************************Biens Immo
+public chercherBienImmobilierParClasseStandard(id:number){
+  return this.http.get(`${this.url}recBienByCstd?pId=${id}`)
+}
+
+// *******************************************Biens A Louer
+
+public afficherTousBaL
+
+
+
+
+
 
   //methode ajouter un bien Immobilier
   public ajouterBienAVendre(bvIn:BiensAVendre):Observable<BiensAVendre>{
