@@ -21,14 +21,17 @@ export class ModifierClientComponent implements OnInit {
     this.formModif=new FormGroup({
       id:new FormControl(['']),
       nom:new FormControl(['']),
-      prenom:new FormControl(['']),
+      prenom:new FormControl(['']), 
       mail:new FormControl(['']),
       mdp:new FormControl(['']),
       telephone:new FormControl(['']),
-      nomAdresse:new FormControl(['']),
-      codePostal:new FormControl(['']),
-      ville:new FormControl(['']),
-      pays:new FormControl([''])
+      adresse: new FormGroup({
+        nomAdresse:new FormControl(['']),
+        codePostal:new FormControl(['']),
+        ville:new FormControl(['']),
+        pays:new FormControl([''])
+      })
+     
     })
 
     // récupérer l'id optionnel de la requête

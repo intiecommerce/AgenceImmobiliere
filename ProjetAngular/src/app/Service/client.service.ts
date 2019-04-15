@@ -37,4 +37,27 @@ export class ClientService {
   }
 
   //methode afficher biens a vendre
+  public afficherTousVis(){
+    return this.http.get(`${this.url}listeVis`)
+  }
+
+  //methode rechercher une visite par son id
+  public chercherVisParId(id:number){
+    return this.http.get(`${this.url}recVis?pId=${id}`)
+  }
+
+  //methode afficher tous les dossiers
+  public afficherTousDos(){
+    return this.http.get(`${this.url}listeDos`)
+  }
+
+  //recherche un dossier par son id
+  public chercherDosParId(id:number){
+    return this.http.get(`${this.url}recDos?pId=${id}`)
+  }
+
+  //rechercher une classe standard par son id
+  public chercherClasseStandardParClient(id:number){
+    return this.http.get(`${this.url}recCstdByCli?pId=${id}`)
+  }
 }
