@@ -4,7 +4,7 @@ import { Time } from '@angular/common';
 
 export class Visite {
 
-    public id:number;
+    public idvi:number;
     public dateVisite:Date;
     public heureVisite:Time;
     public client:Personne;

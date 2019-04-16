@@ -20,7 +20,6 @@ export class ModifierVisiteComponent implements OnInit {
     this.formModif=new FormGroup({
       id:new FormControl(['']),
       dateVisite:new FormControl(['']),
-      heureVisite:new FormControl(['']),
       client: new FormGroup({
         id:new FormControl(['']),
       }),
