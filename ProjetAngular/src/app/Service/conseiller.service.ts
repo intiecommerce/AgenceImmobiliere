@@ -193,6 +193,4 @@ public supprimerDossier(id:number){
   public chercherClasseStandardParClient(id:number){
     return this.http.get(`${this.url}recCstdByCli?pId=${id}`)
   }
-
-
 }
