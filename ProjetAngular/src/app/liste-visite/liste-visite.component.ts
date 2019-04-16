@@ -1,6 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
 import "dhtmlx-scheduler";
-import {} from "@types/dhtmlxscheduler";
 
 @Component({
   encapsulation: ViewEncapsulation.None,
