@@ -1,11 +1,17 @@
 <h1 style="color: chartreuse; text-align: center">Modifier un proprietaire</h1>
 
 
-<form class="form-horizontal" (submit)="ajouter()">
+<form class="form-horizontal" (submit)="modifier()">
+    <div class="form-group">
+        <label for="idId" class="col-sm-2 control-label">Id</label>
+        <div class="col-sm-5">
+          <input type="number" class="form-control" id="idId" placeholder="Id" formControlName="id" (keyup)="update()">
+        </div>
+      </div>
   <div class="form-group">
     <label class="col-sm-2" for="nom">Nom</label>
     <div class="col-sm-5">
-      <input type="text" class="form-control" name="nom" id="nom" aria-describedby="nomId" placeholder="Nom"
+      <input type="text" class="form-control" name="nom" id="nom" aria-describedby="nomId" placeholder="Nom" 
         [(ngModel)]="propIn.nom">
     </div>
   </div>
@@ -27,21 +33,21 @@
     <label class="col-sm-2" for="password">Mot de Passe</label>
     <div class="col-sm-5">
       <input type="text" class="form-control" name="password" id="password" aria-describedby="pwdId"
-        placeholder="Password" [(ngModel)]="propIn.password">
+        placeholder="Password" [(ngModel)]="propIn.mdp">
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2" for="telPerso">Télphone Personnel</label>
     <div class="col-sm-5">
       <input type="text" class="form-control" name="telPerso" id="telPerso" aria-describedby="telPersoId"
-        placeholder="Telephone Personnel" [(ngModel)]="propIn.telPerso">
+        placeholder="Telephone Personnel" [(ngModel)]="propIn.telephone">
     </div>
   </div>
   <div class="form-group">
     <label class="col-sm-2" for="telPro">Téléphone Professionnel</label>
     <div class="col-sm-5">
       <input type="text" class="form-control" name="telPro" id="telPro" aria-describedby="telProId"
-        placeholder="Telephone Professionnel" [(ngModel)]="propIn.telPro">
+        placeholder="Telephone Professionnel" [(ngModel)]="propIn.telephonePro">
     </div>
   </div>
   <div class="form-group">
