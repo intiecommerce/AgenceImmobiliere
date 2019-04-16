@@ -41,7 +41,7 @@ public modifierProprietaire(pIn:Proprietaire):Observable<Proprietaire>{
 
 //methode supprimer Proprietaire
 public supprimerProprietaire(id:number){
-  return this.http.delete(`${this.url}supprPro/${id}`)
+  return this.http.delete(`${this.url}supprPro?pId=${id}`)
 }
 
 //methode rechercher un proprietaire
@@ -71,7 +71,7 @@ public chercherClientParId(id:number){
 
 //methode supprimer client
 public supprimerClient(id:number){
-  return this.http.delete(`${this.url}supprCli/${id}`)
+  return this.http.delete(`${this.url}supprCli?pId=${id}`)
 }
 
 //rechercher client par classe standard
@@ -102,7 +102,7 @@ public modifierBaL(balIn:BiensALouer):Observable<BiensALouer>{
 
 //supprimer bien a louer
 public supprimerBaL(id:number){
-  this.http.delete(`${this.url}supprBaL/${id}`)
+  this.http.delete(`${this.url}supprBaL?pId=${id}`)
 }
 
  //methode rechercher un bien a louer par son id
@@ -128,7 +128,7 @@ public modifierBaV(bavIn:BiensAVendre):Observable<BiensAVendre>{
 
 //supprimer bien a louer
 public supprimerBaV(id:number){
-  this.http.delete(`${this.url}supprBaV/${id}`)
+  this.http.delete(`${this.url}supprBaV?pId=${id}`)
 }
 
  //methode rechercher un bien a louer par son id
@@ -154,7 +154,7 @@ public modifierVisite(vIn:Visite):Observable<Visite>{
 
 //supprimer bien a louer
 public supprimerVisite(id:number){
-  this.http.delete(`${this.url}supprVis/${id}`)
+  this.http.delete(`${this.url}supprVis?pId=${id}`)
 }
 
  //methode rechercher un bien a louer par son id
@@ -180,7 +180,7 @@ public modifierDossier(dIn:Dossier):Observable<Dossier>{
 
 //supprimer bien a louer
 public supprimerDossier(id:number){
-  this.http.delete(`${this.url}supprDos/${id}`)
+  this.http.delete(`${this.url}supprDos?pId=${id}`)
 }
 
  //methode rechercher un bien a louer par son id

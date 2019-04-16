@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { TouchSequence } from 'selenium-webdriver';
 import { BiensImmo } from '../Model/biens-immo';
+import { BiensALouer } from '../Model/biens-alouer';
+import { BiensAVendre } from '../Model/biens-avendre';
 
 
 @Component({
@@ -12,10 +14,14 @@ import { BiensImmo } from '../Model/biens-immo';
 export class AjouterBiensImmoComponent implements OnInit {
 
   offres = ['A Vendre', 'A Louer'];
+  typeVendres = ['Terrain', 'Maison', 'Appartement', 'Studio', 'Entrepot', 'Emplacement'];
+  typeLouers = ['Maison', 'Appartement', 'Studio', 'Entrepot', 'Emplacement'];
   model = new BiensImmo();
-  bienAVendre: boolean = false;
-  bienALouer: boolean = false;
-
+  bienAVendreb: boolean;
+  bienALouerb: boolean;
+  bienALouer: BiensALouer;
+  bienAVendre: BiensAVendre;
+  terrain: boolean=false;
   constructor() { }
 
   ngOnInit() {
@@ -25,15 +31,29 @@ export class AjouterBiensImmoComponent implements OnInit {
 
   public choixOffre() {
     if (this.model.offre == 'A Vendre') {
-      this.bienAVendre=true;
-      this.bienALouer=false;
+      this.bienAVendreb=true;
+      this.bienALouerb=false;
+      this.bienAVendre.offre=this.model.offre;
     } else if(this.model.offre=='A Louer') {
-      this.bienAVendre=false;
-      this.bienALouer=true;
+      this.bienAVendreb=false;
+      this.bienALouerb=true;
+      this.bienALouer.offre=this.model.offre;
     } else {
-      this.bienAVendre=false;
-      this.bienALouer=false;
+      this.bienAVendreb=false;
+      this.bienALouerb=false;
     }
+  }
+
+  public choixVendre(){
+    if(this.model.type =='Terrain'){
+      this.terrain=true;
+      this.bienAVendre.type=this.model.type;
+
+    }
+  }
+
+  public choixLouer(){
+
   }
 
 }
