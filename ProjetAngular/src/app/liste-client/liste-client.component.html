@@ -1,3 +1,30 @@
-<p>
-  liste-client works!
-</p>
+<table class="table table-striped">
+  <tr>
+    <th>Id</th>
+    <th>Nom</th>
+    <th>Prenom</th>
+    <th>Mail</th>
+    <th>Telephone</th>
+    <th>Rue</th>
+    <th>Code Postal</th>
+    <th>Ville</th>
+    <th>Pays</th>
+    <th>Operation</th>
+  
+  </tr>
+  <tr *ngFor="let c of liste">
+    <td>{{c.id}}</td>
+    <td>{{c.nom}}</td>
+    <td>{{c.prenom}}</td>
+    <td>{{c.mail}}</td>
+    <td>{{c.telephone}}</td>
+    <td>{{c.adresse.nomAdresse}}</td>
+    <td>{{c.adresse.codePostal}}</td>
+    <td>{{c.adresse.ville}}</td>
+    <td>{{c.adresse.pays}}</td>
+    <td><button class="btn btn-danger" (click)="deleteLien(c.id)">Supprimer</button>
+     | 
+    <a class="btn btn-primary"  [routerLink]="[ '/modifCli', {id:c.id} ]">Modifier</a></td>
+    
+  </tr>
+</table>
