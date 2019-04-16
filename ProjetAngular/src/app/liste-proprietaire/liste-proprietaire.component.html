@@ -3,7 +3,7 @@
     <div class="table-title">
       <div class="row">
         <div class="col-sm-8">
-          <h2>Customer <b>Details</b></h2>
+          <h2>Liste des <b>Propriétaire</b></h2>
         </div>
         <div class="col-sm-4">
           <div class="search-box">
@@ -16,27 +16,25 @@
     <table class="table table-striped table-hover table-bordered">
       <thead>
         <tr>
-          <th>#</th>
-          <th>Name <i class="fa fa-sort"></i></th>
-          <th>Address</th>
-          <th>City <i class="fa fa-sort"></i></th>
-          <th>Pin Code</th>
-          <th>Country <i class="fa fa-sort"></i></th>
+          <th>Nom</th>
+          <th>Prenom <i class="fa fa-sort"></i></th>
+          <th>Mail</th>
+          <th>Téléphone Personnel<i class="fa fa-sort"></i></th>
+          <th>Téléphone Professionnel</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Thomas Hardy</td>
-          <td>89 Chiaroscuro Rd.</td>
-          <td>Portland</td>
-          <td>97219</td>
-          <td>USA</td>
+        <tr *ngFor="let p of listeProp">
+          <td>{{p.nom}}</td>
+          <td>{{p.prenom}}</td>
+          <td>{{p.mail}}</td>
+          <td>{{p.telephone}}</td>
+          <td>{{p.telephonePro}}</td>
           <td>
             <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
             <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+            <a (click)="deleteLien(p.id)" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
           </td>
         </tr>
 

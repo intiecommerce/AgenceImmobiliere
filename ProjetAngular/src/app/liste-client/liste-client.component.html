@@ -1,30 +1,53 @@
-<table class="table table-striped">
-  <tr>
-    <th>Id</th>
-    <th>Nom</th>
-    <th>Prenom</th>
-    <th>Mail</th>
-    <th>Telephone</th>
-    <th>Rue</th>
-    <th>Code Postal</th>
-    <th>Ville</th>
-    <th>Pays</th>
-    <th>Operation</th>
-  
-  </tr>
-  <tr *ngFor="let c of liste">
-    <td>{{c.id}}</td>
-    <td>{{c.nom}}</td>
-    <td>{{c.prenom}}</td>
-    <td>{{c.mail}}</td>
-    <td>{{c.telephone}}</td>
-    <td>{{c.adresse.nomAdresse}}</td>
-    <td>{{c.adresse.codePostal}}</td>
-    <td>{{c.adresse.ville}}</td>
-    <td>{{c.adresse.pays}}</td>
-    <td><button class="btn btn-danger" (click)="deleteLien(c.id)">Supprimer</button>
-     | 
-    <a class="btn btn-primary"  [routerLink]="[ '/modifCli', {id:c.id} ]">Modifier</a></td>
+<div class="container">
+  <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row">
+        <div class="col-sm-8">
+          <h2>Liste des clients</h2>
+        </div>
+        <div class="col-sm-4">
+          <div class="search-box">
+            <i class="material-icons">&#xE8B6;</i>
+            <input type="text" class="form-control" placeholder="Search&hellip;">
+          </div>
+        </div>
+      </div>
+    </div>
+    <table class="table table-striped table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nom</th>
+          <th>Prenom</th>
+          <th>Mail</th>
+          <th>Telephone</th>
+          <th>Rue</th>
+          <th>Code Postal</th>
+          <th>Ville</th>
+          <th>Pays</th>
+          <th>Operation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of liste">
+          <td>{{c.id}}</td>
+          <td>{{c.nom}}</td>
+          <td>{{c.prenom}}</td>
+          <td>{{c.mail}}</td>
+          <td>{{c.telephone}}</td>
+          <td>{{c.adresse.nomAdresse}}</td>
+          <td>{{c.adresse.codePostal}}</td>
+          <td>{{c.adresse.ville}}</td>
+          <td>{{c.adresse.pays}}</td>
+          <td>
+            <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
+            <a [routerLink]="[ '/modifCli', {id:c.id} ]" class="edit" title="Modifier" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+            <a (click)="deleteLien(c.id)" class="delete" title="Supprimer" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
     
-  </tr>
-</table>
+  </div>
+</div>

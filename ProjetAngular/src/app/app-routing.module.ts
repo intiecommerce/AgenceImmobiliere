@@ -19,6 +19,7 @@ import { ListeClasseStandardComponent } from './liste-classe-standard/liste-clas
 import { AjouterVisiteComponent } from './ajouter-visite/ajouter-visite.component';
 import { ModifierVisiteComponent } from './modifier-visite/modifier-visite.component';
 import { SupprimerVisiteComponent } from './supprimer-visite/supprimer-visite.component';
+import { ListeVisiteComponent } from './liste-visite/liste-visite.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -40,7 +41,7 @@ const routes: Routes = [
   {path:'listeClasseStandard',component:ListeClasseStandardComponent},
   {path:'addVisite',component:AjouterVisiteComponent},
   {path:'updateVisite',component:ModifierVisiteComponent},
-  {path:'listeVisite',component:SupprimerVisiteComponent},
+  {path:'listeVisite',component:ListeVisiteComponent},
 
   {path:'**',redirectTo:'home',pathMatch:'full'}
 ];
