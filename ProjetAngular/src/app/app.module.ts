@@ -64,7 +64,8 @@ import { ListeVisiteComponent } from './liste-visite/liste-visite.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConseillerService } from '../Service/conseiller.service';
 
 @Component({
   selector: 'app-liste-proprietaire',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListeProprietaireComponent implements OnInit {
 
-  constructor() { }
+  listeProp: any;
+
+  constructor(private conService: ConseillerService) { }
 
   ngOnInit() {
+    this.conService.afficherTousProprietaire().subscribe(
+      (data) => { this.listeProp = data },
+      (erreur) => { console.log(erreur) }
+    )
+  }
+
+  public deleteLien(id: number) {
+    this.conService.supprimerProprietaire(id).subscribe(
+      (result) => { this.listeProp = this.listeProp.filter(p => p.id != id) }
+    )
   }
 
 }
