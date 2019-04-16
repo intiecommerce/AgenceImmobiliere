@@ -1,3 +1,4 @@
+
 <h1 style="color: chartreuse; text-align: center">Ajouter un bien immobilier</h1>
 
 <form class="form-horizontal" (submit)="choixOffre()">
@@ -9,11 +10,33 @@
       </select>
     </div>
     <div class="col-sm-2">
+      <button type="submit" class="btn btn-success">Sélectionner l'offre</button>
+    </div>
+  </div>
+</form>
+<div *ngIf="bienAVendreb">
+<h3 >C'est le form A vendre</h3>
+
+<form class="form-horizontal" (submit)="choixVendre()">
+  <div class="form-group row col-sm-10">
+    <label for="idVendre" class="control-label">Vendre</label>
+    <div class="col-sm-5">
+      <select  class=" form-control" id="idVendre" [(ngModel)]="model.type" [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let typeVendre of typeVendres" [value]="typeVendre">{{typeVendre}}</option>
+      </select>
+    </div>
+    <div class="col-sm-2">
       <button type="submit" class="btn btn-success">ok</button>
     </div>
   </div>
 </form>
+</div>
 
-<h3 *ngIf="bienAVendre">C'est le form A vendre</h3>
-<h3 *ngIf="bienALouer">C'est le form A louer</h3>
+<div *ngIf="terrain">
+<h4 >Formulaire pour le terrain</h4>
+</div>
+
+<h3 *ngIf="bienALouerb">C'est le form A louer</h3>
+
+
 <h1 style="color: crimson; text-align: center" *ngIf="flag">L'ajout du bien immobilier a échoué</h1>
