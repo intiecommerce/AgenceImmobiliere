@@ -71,7 +71,7 @@ public chercherClientParId(id:number){
 
 //methode supprimer client
 public supprimerClient(id:number){
-  return this.http.delete(`${this.url}supprCli/${id}`)
+  return this.http.delete(`${this.url}supprCli?pId=${id}`)
 }
 
 //rechercher client par classe standard
