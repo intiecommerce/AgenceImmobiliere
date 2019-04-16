@@ -1,6 +1,6 @@
 .footer{
     height: 170px;
-    background-color: aqua;
+    background-image: linear-gradient(rgb(0, 81, 128),rgba(0, 204, 255, 0.582))
 }
 .texteFooter{
     margin-left: 20px; 
