@@ -40,6 +40,7 @@
           <td>{{c.adresse.ville}}</td>
           <td>{{c.adresse.pays}}</td>
           <td>
+            <a href="#" class="view" title="View" data-toggle="tooltip"><i class="material-icons">&#xE417;</i></a>
             <a [routerLink]="[ '/modifCli', {id:c.id} ]" class="edit" title="Modifier" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
             <a (click)="deleteLien(c.id)" class="delete" title="Supprimer" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
           </td>
