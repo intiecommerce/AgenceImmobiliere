@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {ScheduleModule} from '@syncfusion/ej2-angular-schedule';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -64,7 +65,9 @@ import { ListeVisiteComponent } from './liste-visite/liste-visite.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ScheduleModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
