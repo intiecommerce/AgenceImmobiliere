@@ -1,42 +1,202 @@
-
 <h1 style="color: chartreuse; text-align: center">Ajouter un bien immobilier</h1>
 
-<form class="form-horizontal" (submit)="choixOffre()">
+<form class="form-horizontal" (submit)="ajouter()" >
   <div class="form-group row col-sm-10">
     <label for="idOffre" class="control-label">Offre</label>
     <div class="col-sm-5">
-      <select  class=" form-control" id="idOffre" [(ngModel)]="model.offre" [ngModelOptions]="{standalone: true}">
-        <option *ngFor="let offreOption of offres" [value]="offreOption"  >{{offreOption}}</option>
+      <select class=" form-control" id="idOffre" [(ngModel)]="offreSelect" (change)="choixOffre()"
+        [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let offreOption of offres" [value]="offreOption">{{offreOption}}</option>
       </select>
     </div>
-    <div class="col-sm-2">
-      <button type="submit" class="btn btn-success">Sélectionner l'offre</button>
+  </div>
+
+  <div *ngIf="bienAVendreb">
+    <div class="form-group row col-sm-10">
+      <label for="idVendre" class="control-label">Type de Bien</label>
+      <div class="col-sm-5">
+        <select class=" form-control" id="idVendre" [(ngModel)]="typeSelect" (change)="choixVendre()"
+          [ngModelOptions]="{standalone: true}">
+          <option *ngFor="let typeVendre of typeVendres" [value]="typeVendre">{{typeVendre}}</option>
+        </select>
+      </div>
     </div>
   </div>
-</form>
-<div *ngIf="bienAVendreb">
-<h3 >C'est le form A vendre</h3>
 
-<form class="form-horizontal" (submit)="choixVendre()">
-  <div class="form-group row col-sm-10">
-    <label for="idVendre" class="control-label">Vendre</label>
-    <div class="col-sm-5">
-      <select  class=" form-control" id="idVendre" [(ngModel)]="model.type" [ngModelOptions]="{standalone: true}">
-        <option *ngFor="let typeVendre of typeVendres" [value]="typeVendre">{{typeVendre}}</option>
-      </select>
-    </div>
-    <div class="col-sm-2">
-      <button type="submit" class="btn btn-success">ok</button>
+  <div *ngIf="bienALouerb">
+    <div class="form-group row col-sm-10">
+      <label for="idLouer" class="control-label">Type de Bien</label>
+      <div class="col-sm-5">
+        <select class=" form-control" id="idLouer" [(ngModel)]="typeSelect" (change)="choixLouer()"
+          [ngModelOptions]="{standalone: true}">
+          <option *ngFor="let typeLouer of typeLouers" [value]="typeLouer">{{typeLouer}}</option>
+        </select>
+      </div>
     </div>
   </div>
+
+  <div *ngIf="maisonalouerb">
+    <div class="form-group row col-sm-10">
+      <div class="col-sm-5">
+        <label for="idTitre" class="col-sm-2 control-label">Titre de l'annonce</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="idTitre" placeholder="Titre" name="fTitre"
+            [(ngModel)]="bienALouer.titre">
+        </div>
+      </div>
+
+      <div class="form-group row col-sm-10">
+        <div class="col-sm-5">
+          <label for="idDescription" class="col-sm-2 control-label">Description</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="idDescription" placeholder="Description" name="fDescription"
+              [(ngModel)]="bienALouer.description">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row col-sm-10">
+        <div class="col-sm-5">
+          <label for="idSuperficie" class="col-sm-2 control-label">Superficie (en m²)</label>
+          <div class="col-sm-5">
+            <input type="number" class="form-control" id="idSuperficie" placeholder="Superficie" name="fSuperficie"
+              [(ngModel)]="bienALouer.superficie">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row col-sm-10">
+        <div class="col-sm-5">
+          <label for="idPrix" class="col-sm-2 control-label">Prix</label>
+          <div class="col-sm-5">
+            <input type="number" class="form-control" id="idPrix" placeholder="Prix" name="fPrix"
+              [(ngModel)]="bienALouer.prix">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row col-sm-10">
+        <div class="col-sm-5">
+          <label for="idDateMiseEnVente" class="col-sm-2 control-label">Date de Mise en Vente</label>
+          <div class="col-sm-5">
+            <input type="date" class="form-control" id="idDateMiseEnVente" placeholder="DateMiseEnVente"
+              name="fDateMiseEnVente" [(ngModel)]="bienALouer.dateMiseEnVente">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row col-sm-10">
+        <div class="col-sm-5">
+          <label for="idDateDisponibilite" class="col-sm-2 control-label">Date de Disponibilité</label>
+          <div class="col-sm-5">
+            <input type="date" class="form-control" id="idDateDisponibilite" placeholder="idDateDisponibilite"
+              name="fDateDisponibilite" [(ngModel)]="bienALouer.dateDisponibilite">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="idAdresse" class="col-sm-2 control-label">Adresse (nom et numéro de rue)</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="idAdresse" placeholder="Adresse" name="fAdresse"
+            [(ngModel)]="adresseIn.nomAdresse">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="idCodePostal" class="col-sm-2 control-label">Code postal</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="idCodePostal" placeholder="CodePostal" name="fCodePostal"
+            [(ngModel)]="adresseIn.codePostal">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="idVille" class="col-sm-2 control-label">Ville</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="idVille" placeholder="Ville" name="fVille"
+            [(ngModel)]="adresseIn.ville">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="idPays" class="col-sm-2 control-label">Pays</label>
+        <div class="col-sm-5">
+          <input type="text" class="form-control" id="idPays" placeholder="Pays" name="fPays"
+            [(ngModel)]="adresseIn.pays">
+        </div>
+      </div>
+
+      <div class="form-group row col-sm-10">
+        <div class="col-sm-5">
+          <label for="idNombreChambre" class="col-sm-2 control-label">Nombre de Chanmbres</label>
+          <div class="col-sm-5">
+            <input type="number" class="form-control" id="idNombreChambre" placeholder="Nombre de Chanmbres"
+              name="fNombreChanmbres" [(ngModel)]="bienALouer.nombreChambre">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row col-sm-10">
+        <div class="col-sm-5">
+          <label for="idCaution" class="col-sm-2 control-label">Caution</label>
+          <div class="col-sm-5">
+            <input type="number" class="form-control" id="idCaution" placeholder="Caution" name="fCaution"
+              [(ngModel)]="bienALouer.caution">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row col-sm-10">
+        <div class="col-sm-5">
+          <label for="idLoyer" class="col-sm-2 control-label">Loyer</label>
+          <div class="col-sm-5">
+            <input type="number" class="form-control" id="idLoyer" placeholder="Loyer" name="fLoyer"
+              [(ngModel)]="bienALouer.loyer">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row col-sm-10">
+        <div class="col-sm-5">
+          <label for="idCharges" class="col-sm-2 control-label">Charges</label>
+          <div class="col-sm-5">
+            <input type="number" class="form-control" id="idCharges" placeholder="Charges" name="fCharges"
+              [(ngModel)]="bienALouer.charges">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row col-sm-10">
+        <div class="col-sm-5">
+          <label for="idtypeBail" class="col-sm-2 control-label">Type de Bail</label>
+          <div class="col-sm-5">
+            <input type="text" class="form-control" id="idtypeBail" placeholder="=Type de Bail" name="fTypeBail"
+              [(ngModel)]="bienALouer.typeBail">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row col-sm-10">
+        <label for="idGarniture" class="control-label">Garniture</label>
+        <div class="col-sm-5">
+          <select class=" form-control" id="idGarniture" [(ngModel)]="bienALouer.garniture"
+            [ngModelOptions]="{standalone: true}">
+            <option *ngFor="let garniture of garnitures" [value]="garniture">{{garniture}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="terrainb">
+      <h4>Formulaire pour le terrain</h4>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-success">Créer l'offre</button>
+    </div>
+  </div>
+  
 </form>
-</div>
-
-<div *ngIf="terrain">
-<h4 >Formulaire pour le terrain</h4>
-</div>
-
-<h3 *ngIf="bienALouerb">C'est le form A louer</h3>
-
-
+    
+  
 <h1 style="color: crimson; text-align: center" *ngIf="flag">L'ajout du bien immobilier a échoué</h1>
